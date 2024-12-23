@@ -8,7 +8,7 @@ function renderMenuItem({ title, href }: MenuItem) {
     <Button
       variant="plain"
       width="full"
-      colorPalette="teal"
+      colorPalette="colorPalette"
       size="md"
       key={title}
       asChild

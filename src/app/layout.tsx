@@ -1,6 +1,7 @@
 import type { PropsWithChildren } from "react";
 import type { Metadata } from "next";
 import { Provider } from "@/providers/chakra-provider";
+import { NotoSans } from "@/styles/font";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -9,7 +10,7 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: PropsWithChildren) {
   return (
-    <html lang="ja" suppressHydrationWarning>
+    <html lang="ja" className={NotoSans.variable} suppressHydrationWarning>
       <body>
         <Provider>{children}</Provider>
       </body>

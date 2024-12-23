@@ -23,18 +23,18 @@ export default function Drawer() {
       <DrawerTrigger asChild>
         <IconButton
           position="fixed"
-          colorPalette="teal"
+          colorPalette="colorPalette"
           display={{ base: undefined, md: "none" }} 
           bottom={4}
           right={4}
-          shadow="xl"
+          shadow="lg"
           size="xl"
           aria-label="Open Drawer"
         >
           <LuMenu />
         </IconButton>
       </DrawerTrigger>
-      <DrawerContent roundedTop="l3">
+      <DrawerContent roundedTop="l3" maxHeight={{ base: "60vh", sm: "80vh" }}>
         <DrawerCloseTrigger />
         <DrawerHeader>
           <DrawerTitle asChild>
