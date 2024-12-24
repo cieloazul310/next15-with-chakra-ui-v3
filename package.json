@@ -9,6 +9,7 @@
     "lint": "next lint",
     "format": "prettier \"./src/**/*.{ts,tsx}\" --parser typescript --write",
     "lint-staged": "lint-staged",
+    "prepare": "git config --local core.hooksPath .githooks",
     "typegen": "npx @chakra-ui/cli typegen ./src/theme/index.ts"
   },
   "dependencies": {
