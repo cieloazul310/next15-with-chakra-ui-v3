@@ -1,7 +1,8 @@
 import NextLink from "next/link";
 import { VStack, Heading, For } from "@chakra-ui/react";
 import { Button } from "@/components/ui/button";
-import { menu, isMenuGroup, type MenuItem } from "@/data/menu";
+import { menu } from "@/data/menu";
+import { isMenuGroup, type MenuItem } from "@/utils/menu";
 
 function renderMenuItem({ title, href }: MenuItem) {
   return (

@@ -1,5 +1,5 @@
 import type { PropsWithChildren } from "react";
-import { Box, Container } from "@chakra-ui/react";
+import { Box } from "@chakra-ui/react";
 import Header from "./header";
 import Menu from "./menu";
 import Drawer from "./drawer";
@@ -16,17 +16,16 @@ export default function MainLayout({ children }: PropsWithChildren) {
           borderRightWidth="1px"
           borderRightColor="colorPalette.subtle"
           display={{ base: "none", md: "block" }}
-          pt="lg"
+          py="lg"
           position="sticky"
           top="token(sizes.header-height)"
           overflowY="auto"
+          flexShrink={0}
         >
           <Menu />
         </Box>
-        <Box flexGrow={1} overflowX="hidden">
-          <Container maxWidth="breakpoint-md" asChild>
-            <main>{children}</main>
-          </Container>
+        <Box flexGrow={1} overflowX="hidden" asChild>
+          <main>{children}</main>
         </Box>
       </Box>
       <Drawer />

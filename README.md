@@ -42,6 +42,11 @@ Storybook for Next.js - Storybook
 Change the default color palette - Chakra UI  
 <https://www.chakra-ui.com/guides/theming-change-default-color-palette>
 
+### Next.js x MDX
+
+Markdown and MDX - Next.js  
+<https://nextjs.org/docs/app/building-your-application/configuring/mdx>
+
 [React]: https://react.dev/
 [Next.js]: https://nextjs.org/
 [Chakra UI]: https://www.chakra-ui.com/
