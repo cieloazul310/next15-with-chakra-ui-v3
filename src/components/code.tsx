@@ -4,7 +4,7 @@ import type { HTMLAttributes } from "react";
 export type CodeProps = HTMLAttributes<"code">;
 
 export function Code(props: CodeProps) {
-  return <chakra.code fontFamily="mono" {...props} />
+  return <chakra.code fontFamily="mono" {...props} />;
 }
 /*
 export const Code = chakra("code", {

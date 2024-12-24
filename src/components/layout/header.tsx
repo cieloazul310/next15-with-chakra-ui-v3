@@ -8,7 +8,8 @@ import {
   MenuTrigger,
 } from "@/components/ui/menu";
 import { ColorModeButton } from "@/components/ui/color-mode";
-import { menu, isMenuGroup, type MenuItem as MenuItemType } from "@/utils/menu";
+import { menu, isMenuGroup, type MenuItem as MenuItemType } from "@/data/menu";
+import { siteMetadata } from "@/data/site-metadata";
 
 function renderMenuItem({ title, href }: MenuItemType) {
   return (
@@ -22,7 +23,12 @@ export default function Header() {
   return (
     <Flex
       asChild
+      width="full"
       height="header-height"
+      top={0}
+      right={0}
+      position="sticky"
+      zIndex="sticky"
       alignItems="center"
       bgGradient="to-r"
       gradientFrom="bg.panel/80"
@@ -30,22 +36,17 @@ export default function Header() {
       backdropFilter="blur(4px)"
       borderBottomWidth="1px"
       borderBottomColor="colorPalette.subtle"
-      position="sticky"
-      zIndex="sticky"
-      top={0}
-      right={0}
       px={{ base: "md", md: "lg" }}
-      width="full"
       gap="md"
     >
       <header>
         <Heading
           as="h1"
-          _hover={{ color: "colorPalette.solid", textDecoration: "underline" }}
+          _hover={{ color: "colorPalette.fg", textDecoration: "underline" }}
         >
-          <NextLink href="/">Next.js + Chakra UI</NextLink>
+          <NextLink href="/">{siteMetadata.title}</NextLink>
         </Heading>
-        <Box display={{ base: "none", md: "block" }}>
+        <Box display={{ base: "none", md: "flex" }}>
           <For each={menu}>
             {(item) => {
               if (isMenuGroup(item)) {
@@ -60,7 +61,11 @@ export default function Header() {
                   </MenuRoot>
                 );
               }
-              return renderMenuItem(item);
+              return (
+                <Button variant="plain" asChild>
+                  <NextLink href={item.href}>{item.title}</NextLink>
+                </Button>
+              );
             }}
           </For>
         </Box>

@@ -9,7 +9,30 @@ export type MenuGroup = {
   items: MenuItem[];
 };
 
-export const menu = [
+export function defineMenu(
+  menu: (MenuItem | MenuGroup)[],
+): (MenuItem | MenuGroup)[] {
+  return menu;
+}
+
+export const menu = defineMenu([
+  {
+    title: "試合を見る",
+    items: [
+      {
+        title: "試合日程",
+        href: "/",
+      },
+      {
+        title: "チケット",
+        href: "/",
+      },
+      {
+        title: "放送を見る",
+        href: "/",
+      },
+    ],
+  },
   {
     title: "チーム",
     items: [
@@ -56,9 +79,8 @@ export const menu = [
       },
     ],
   },
-] satisfies (MenuItem | MenuGroup)[];
+]);
 
 export function isMenuGroup(item: MenuItem | MenuGroup): item is MenuGroup {
   return has.call(item, "items");
 }
-

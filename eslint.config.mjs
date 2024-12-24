@@ -12,7 +12,11 @@ const compat = new FlatCompat({
 
 /** @type {import("eslint").Linter.Config[]} */
 const eslintConfig = [
-  ...compat.extends("next/core-web-vitals", "next/typescript"),
+  ...compat.extends(
+    "next/core-web-vitals",
+    "next/typescript",
+    "plugin:storybook/recommended",
+  ),
   {
     rules: {
       "@typescript-eslint/consistent-type-imports": "error",

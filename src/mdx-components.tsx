@@ -1,7 +1,8 @@
-import { Heading, Text, Box } from "@chakra-ui/react";
+import { Heading, Text, Box, Kbd, List, Table } from "@chakra-ui/react";
 import type { MDXComponents } from "mdx/types";
 import type { PropsWithChildren, PropsWithoutRef } from "react";
 import { Blockquote } from "@/components/ui/blockquote";
+import { Link } from "@/components/link";
 
 export function useMDXComponents(components: MDXComponents): MDXComponents {
   return {
@@ -29,14 +30,29 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
     ),
     h6: (props) => <Heading as="h6" size="md" my="md" {...props} />,
     p: (props) => <Text my="md" {...props} />,
+    a: (props) => <Link {...props} />,
+    ol: (props) => <List.Root as="ol" {...props} />,
+    ul: (props) => <List.Root as="ul" {...props} />,
+    li: (props) => <List.Item {...props} />,
     pre: (props) => (
-      <Box as="pre" p="md" rounded="md" my="lg" bg={{ base: "colorPalette.50", _dark: "bg.muted" }} overflowX="scroll" {...props} />
+      <Box as="pre" p="md" rounded="md" my="lg" overflowX="scroll" {...props} />
     ),
+    table: (props) => (
+      <Table.ScrollArea borderWidth="1px" maxW="xl" my="lg">
+        <Table.Root variant="outline" stickyHeader {...props} />
+      </Table.ScrollArea>
+    ),
+    thead: (props) => <Table.Header {...props} />,
+    tbody: (props) => <Table.Body {...props} />,
+    tr: (props) => <Table.Row {...props} />,
+    th: (props) => <Table.ColumnHeader {...props} />,
+    td: (props) => <Table.Cell {...props} />,
     code: (props) => (
       <Text as="code" fontFamily="mono" fontSize="sm" {...props} />
     ),
     blockquote: (props: PropsWithoutRef<PropsWithChildren>) => (
       <Blockquote my="lg" {...props} />
     ),
+    kbd: (props) => <Kbd {...props} />,
   };
 }
