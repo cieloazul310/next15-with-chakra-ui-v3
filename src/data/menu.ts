@@ -1,19 +1,4 @@
-const has = Object.prototype.hasOwnProperty;
-
-export type MenuItem = {
-  title: string;
-  href: string;
-};
-export type MenuGroup = {
-  title: string;
-  items: MenuItem[];
-};
-
-export function defineMenu(
-  menu: (MenuItem | MenuGroup)[],
-): (MenuItem | MenuGroup)[] {
-  return menu;
-}
+import { defineMenu } from "@/utils/menu";
 
 export const menu = defineMenu([
   {
@@ -80,7 +65,3 @@ export const menu = defineMenu([
     ],
   },
 ]);
-
-export function isMenuGroup(item: MenuItem | MenuGroup): item is MenuGroup {
-  return has.call(item, "items");
-}
