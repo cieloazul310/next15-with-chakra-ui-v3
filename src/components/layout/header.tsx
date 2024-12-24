@@ -8,7 +8,8 @@ import {
   MenuTrigger,
 } from "@/components/ui/menu";
 import { ColorModeButton } from "@/components/ui/color-mode";
-import { menu, isMenuGroup, type MenuItem as MenuItemType } from "@/utils/menu";
+import { menu, isMenuGroup, type MenuItem as MenuItemType } from "@/data/menu";
+import { siteMetadata } from "@/data/site-metadata";
 
 function renderMenuItem({ title, href }: MenuItemType) {
   return (
@@ -43,7 +44,7 @@ export default function Header() {
           as="h1"
           _hover={{ color: "colorPalette.fg", textDecoration: "underline" }}
         >
-          <NextLink href="/">Next.js + Chakra UI</NextLink>
+          <NextLink href="/">{siteMetadata.title}</NextLink>
         </Heading>
         <Box display={{ base: "none", md: "flex" }}>
           <For each={menu}>

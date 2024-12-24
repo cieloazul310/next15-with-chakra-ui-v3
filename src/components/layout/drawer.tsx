@@ -14,6 +14,7 @@ import {
 } from "@/components/ui/drawer";
 import { Button } from "@/components/ui/button";
 import { ColorModeButton } from "@/components/ui/color-mode";
+import { siteMetadata } from "@/data/site-metadata";
 import Menu from "./menu";
 
 export default function Drawer() {
@@ -38,7 +39,7 @@ export default function Drawer() {
         <DrawerCloseTrigger />
         <DrawerHeader>
           <DrawerTitle asChild>
-            <NextLink href="/">Next.js v15 + Chakra UI v3</NextLink>
+            <NextLink href="/">{siteMetadata.title}</NextLink>
           </DrawerTitle>
         </DrawerHeader>
         <DrawerBody>
