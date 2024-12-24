@@ -1,4 +1,4 @@
-import { Heading, Text, Code, Box } from "@chakra-ui/react";
+import { Heading, Text, Box } from "@chakra-ui/react";
 import type { MDXComponents } from "mdx/types";
 import type { PropsWithChildren, PropsWithoutRef } from "react";
 import { Blockquote } from "@/components/ui/blockquote";
