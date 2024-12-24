@@ -30,7 +30,15 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
     h6: (props) => <Heading as="h6" size="md" my="md" {...props} />,
     p: (props) => <Text my="md" {...props} />,
     pre: (props) => (
-      <Box as="pre" p="md" rounded="md" my="lg" bg={{ base: "colorPalette.50", _dark: "bg.muted" }} overflowX="scroll" {...props} />
+      <Box
+        as="pre"
+        p="md"
+        rounded="md"
+        my="lg"
+        bg={{ base: "colorPalette.50", _dark: "bg.muted" }}
+        overflowX="scroll"
+        {...props}
+      />
     ),
     code: (props) => (
       <Text as="code" fontFamily="mono" fontSize="sm" {...props} />

@@ -61,4 +61,3 @@ export const menu = [
 export function isMenuGroup(item: MenuItem | MenuGroup): item is MenuGroup {
   return has.call(item, "items");
 }
-

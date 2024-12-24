@@ -24,7 +24,7 @@ export default function Drawer() {
         <IconButton
           position="fixed"
           colorPalette="colorPalette"
-          display={{ base: undefined, md: "none" }} 
+          display={{ base: undefined, md: "none" }}
           bottom={4}
           right={4}
           shadow="lg"

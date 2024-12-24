@@ -26,10 +26,10 @@ export default function Menu() {
           if (isMenuGroup(item)) {
             return (
               <VStack gap="sm">
-                <Heading as="h3" size="lg">{item.title}</Heading>
-                <For each={item.items}>
-                  {renderMenuItem}
-                </For>
+                <Heading as="h3" size="lg">
+                  {item.title}
+                </Heading>
+                <For each={item.items}>{renderMenuItem}</For>
               </VStack>
             );
           }

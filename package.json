@@ -7,6 +7,8 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
+    "format": "prettier \"./src/**/*.{ts,tsx}\" --parser typescript --write",
+    "lint-staged": "lint-staged",
     "typegen": "npx @chakra-ui/cli typegen ./src/theme/index.ts"
   },
   "dependencies": {
@@ -31,8 +33,15 @@
     "eslint": "^9.17.0",
     "eslint-config-next": "^15.1.2",
     "eslint-config-prettier": "^9.1.0",
+    "lint-staged": "^15.2.11",
     "prettier": "^3.3.3",
     "typescript": "^5.7.2",
     "typescript-eslint": "^8.18.2"
+  },
+  "lint-staged": {
+    "**/*.{js,mjs,cjs,jsx,ts,tsx}": [
+      "eslint --fix",
+      "prettier --parser typescript --write"
+    ]
   }
 }
