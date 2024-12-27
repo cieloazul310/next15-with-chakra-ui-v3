@@ -6,6 +6,7 @@ export type MenuItem = {
 };
 export type MenuGroup = {
   title: string;
+  href: string;
   items: MenuItem[];
 };
 export type MenuListItem = MenuItem | MenuGroup;

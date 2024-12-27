@@ -2,27 +2,13 @@ import { Box, Flex, Heading, Spacer, For } from "@chakra-ui/react";
 import NextLink from "next/link";
 import { IconButton } from "@chakra-ui/react";
 import { FaGithub } from "react-icons/fa6";
+import { Link } from "@/components/link";
 import { Button } from "@/components/ui/button";
-import {
-  MenuContent,
-  MenuItem,
-  MenuRoot,
-  MenuTrigger,
-} from "@/components/ui/menu";
 import { ColorModeButton } from "@/components/ui/color-mode";
 import { menu } from "@/data/menu";
-import { isMenuGroup, type MenuItem as MenuItemType } from "@/utils/menu";
 import { siteMetadata } from "@/data/site-metadata";
 
-function renderMenuItem({ title, href }: MenuItemType) {
-  return (
-    <MenuItem asChild value={title} key={title}>
-      <NextLink href={href}>{title}</NextLink>
-    </MenuItem>
-  );
-}
-
-export default function Header() {
+export function Header() {
   return (
     <Flex
       asChild
@@ -52,25 +38,11 @@ export default function Header() {
         </Heading>
         <Box display={{ base: "none", md: "inherit" }}>
           <For each={menu}>
-            {(item) => {
-              if (isMenuGroup(item)) {
-                return (
-                  <MenuRoot key={item.title}>
-                    <MenuTrigger asChild>
-                      <Button variant="plain">{item.title}</Button>
-                    </MenuTrigger>
-                    <MenuContent>
-                      <For each={item.items}>{renderMenuItem}</For>
-                    </MenuContent>
-                  </MenuRoot>
-                );
-              }
-              return (
-                <Button variant="plain" asChild>
-                  <NextLink href={item.href}>{item.title}</NextLink>
-                </Button>
-              );
-            }}
+            {(item) => (
+              <Button variant="plain" key={item.title} asChild>
+                <Link href={item.href}>{item.title}</Link>
+              </Button>
+            )}
           </For>
         </Box>
         <Spacer display={{ base: "none", sm: "inherit" }} />
@@ -83,7 +55,7 @@ export default function Header() {
             <a
               href="https://github.com/cieloazul310/next15-with-chakra-ui-v3"
               target="_blank"
-              rel="noopener noreferer"
+              rel="noopener noreferrer"
             >
               <FaGithub />
             </a>

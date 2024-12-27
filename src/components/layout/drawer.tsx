@@ -17,7 +17,7 @@ import { ColorModeButton } from "@/components/ui/color-mode";
 import { siteMetadata } from "@/data/site-metadata";
 import Menu from "./menu";
 
-export default function Drawer() {
+export function Drawer() {
   return (
     <DrawerRoot placement="bottom">
       <DrawerBackdrop />

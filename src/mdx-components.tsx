@@ -3,11 +3,13 @@ import type { MDXComponents } from "mdx/types";
 import type { PropsWithChildren, PropsWithoutRef } from "react";
 import { Blockquote } from "@/components/ui/blockquote";
 import { Link } from "@/components/link";
+import { shortcodes } from "@/components/shortcodes";
 
 export function useMDXComponents(components: MDXComponents): MDXComponents {
   return {
     ...components,
-    h1: (props) => <Heading as="h1" size="4xl" mt="xl" mb="md" {...props} />,
+    ...shortcodes,
+    h1: (props) => <Heading as="h1" size="4xl" mt="xl" mb="lg" {...props} />,
     h2: (props) => <Heading as="h2" size="2xl" mt="xl" mb="md" {...props} />,
     h3: (props) => <Heading as="h3" size="xl" mt="xl" mb="md" {...props} />,
     h4: (props) => (

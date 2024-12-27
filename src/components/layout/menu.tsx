@@ -1,13 +1,13 @@
-import NextLink from "next/link";
 import { VStack, Heading, For } from "@chakra-ui/react";
+import { Link } from "@/components/link";
 import { Button } from "@/components/ui/button";
 import { menu } from "@/data/menu";
 import { isMenuGroup, type MenuItem } from "@/utils/menu";
 
 function renderMenuItem({ title, href }: MenuItem) {
   return (
-    <Button variant="plain" width="full" size="md" key={title} asChild>
-      <NextLink href={href}>{title}</NextLink>
+    <Button variant="plain" size="md" key={title} asChild>
+      <Link href={href}>{title}</Link>
     </Button>
   );
 }
@@ -15,6 +15,7 @@ function renderMenuItem({ title, href }: MenuItem) {
 export default function Menu() {
   return (
     <VStack gap="md">
+      {renderMenuItem({ title: "Top", href: "/" })}
       <For each={menu}>
         {(item) => {
           if (isMenuGroup(item)) {

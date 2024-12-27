@@ -22,6 +22,9 @@ const withMDX = createMDX({
       ],
     ],
   },
+  experimental: {
+    mdxRs: true,
+  },
 });
 
 export default withMDX(nextConfig);

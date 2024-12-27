@@ -2,65 +2,20 @@ import { defineMenu } from "@/utils/menu";
 
 export const menu = defineMenu([
   {
-    title: "試合を見る",
-    items: [
-      {
-        title: "試合日程",
-        href: "/",
-      },
-      {
-        title: "チケット",
-        href: "/",
-      },
-      {
-        title: "放送を見る",
-        href: "/",
-      },
-    ],
+    title: "About",
+    href: "/about",
   },
   {
-    title: "チーム",
+    title: "Feature",
+    href: "/feature",
     items: [
       {
-        title: "男子トップチーム",
-        href: "/",
+        title: "Chakra UI",
+        href: "/feature/chakra",
       },
       {
-        title: "女子トップチーム",
-        href: "/",
-      },
-      {
-        title: "U-18 男子",
-        href: "/",
-      },
-      {
-        title: "U-18 女子",
-        href: "/",
-      },
-      {
-        title: "U-15 男子",
-        href: "/",
-      },
-      {
-        title: "U-15 女子",
-        href: "/",
-      },
-    ],
-  },
-  {
-    title: "クラブ",
-    items: [
-      {
-        title: "会社概要",
-        href: "/",
-      },
-      {
-        title: "クラブの歩み",
-        href: "/",
-      },
-      {
-        title: "経営情報",
-        href: "/",
+        title: "MDX",
+        href: "/feature/mdx",
       },
     ],
   },

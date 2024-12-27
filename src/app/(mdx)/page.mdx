@@ -1,466 +1,66 @@
 
-## このサイトについて
+# Next.js v15 + Chakra UI v3 example
 
-Jリーグが毎年公開している「Jクラブ個別経営情報開示資料」の15年分のデータをクラブ別、年度別に表示したページ。損益計算書、貸借対照表、営業収入、営業費用、入場者数の項目別に表と解説を掲載。
+- [React] v14
+- [Next.js] v15
+- [Storybook] v8
+- [Chakra UI] v3
+- [MDX] v3
+- [ESLint] v9
+- [Prettier] v3
 
-このサイトで使用しているデータは、Jリーグが毎年発表しているJクラブ個別経営情報開示資料を基に独自で入場者数などのデータを追加・加工したものです。データは下記の一次ソースを明記した上で（このページ、つまり「Jクラブ経営情報ポータル」の記載は不要です）ご自由に利用ください。データ加工時に欠損が発生している可能性があります。データ利用の際には念のため一次ソースを確認してください。本データ利用に際して発生した損失や損害に対してサイト作成者は一切の責任を負いません。ご了承ください。
+## Demo
 
-決算数値の単位はJリーグ発表と同様に「百万円」としています。「100」は1億円を表します。
+Vercel  
+https://next15-with-chakra-ui-v3.vercel.app
 
-## Headers
+Storybook  
+https://cieloazul310.github.io/next15-with-chakra-ui-v3
 
-```md
-# H1
-## H2
-### H3
-#### H4
-##### H5
-###### H6
-### Duplicate Header
-### Duplicate Header
-```
+## Repository
 
-# H1
-## H2
-### H3
-#### H4
-##### H5
-###### H6
-### Duplicate Header
-### Duplicate Header
+GitHub  
+https://github.com/cieloazul310/next15-with-chakra-ui-v3
 
-## Paragraphs
+<YouTube src="vP3gxS6nLQg" />
 
-```md
-This is a paragraph.
-I am still part of the paragraph.
+## Reference
 
-New paragraph.
-```
+### Chakra UI x Next.js
 
-This is a paragraph.
-I am still part of the paragraph.
+Using Chakra UI in Next.js (App) - Chakra UI  
+https://www.chakra-ui.com/docs/get-started/frameworks/next-app
 
-New paragraph.
+Add custom fonts to a Next.js project - Chakra UI  
+https://www.chakra-ui.com/guides/theming-add-custom-font-to-nextjs
 
-## Inline
+### Chakra UI x Storybook
 
-```md
-`inline block`
+Using Chakra UI in Storybook - Chakra UI  
+https://www.chakra-ui.com/docs/get-started/frameworks/storybook
 
-<kbd>ctrl</kbd>+<kbd>alt</kbd>+<kbd>del</kbd>
+### Next.js x Storybook
 
-**bold 1** and __bold 2__
+Storybook for Next.js - Storybook  
+https://storybook.js.org/docs/get-started/frameworks/nextjs
 
-*italic 1*  and _italic 2_
+### Chakra UI v3
 
-~~strike~~
+Customization - Chakra UI  
+https://www.chakra-ui.com/docs/theming/customization/overview
 
+Change the default color palette - Chakra UI  
+https://www.chakra-ui.com/guides/theming-change-default-color-palette
 
-***bold 1 and italic 1***
+### Next.js x MDX
 
-___bold 2 and italic 2___
+Markdown and MDX - Next.js  
+https://nextjs.org/docs/app/building-your-application/configuring/mdx
 
-__*bold 2 and italic 1*__
-
-**_bold 1 and italic 2_**
-
-
-~~*strike italic 1*~~ and *~~strike italic 2~~*
-
-~~_strike italic 2_~~ and  _~~strike italic 2~~_
-
-
-~~**strike bold 1**~~ and **~~strike bold 1~~**
-
-~~__strike bold 2__~~ and __~~strike bold 2~~__
-
-
-~~***strike italic 1 bold 1***~~ and ***~~strike italic 1 bold 1~~***
-
-~~___strike italic 2 bold 2___~~ and ___~~strike italic 2 bold 2~~___
-
-**~~*strike italic 1 bold 1*~~** and *~~**strike italic 1 bold 1**~~*
-
-__~~_strike italic 2 bold 2_~~__ and _~~__strike italic 2 bold 2__~~_
-
-**~~_strike italic 2 bold 1_~~** and _~~**strike italic 2 bold 1**~~_
-
-__~~*strike italic 1 bold 2*~~__ and *~~__strike italic 1 bold 2__~~*
-
-```
-
-`inline block`
-
-<kbd>ctrl</kbd>+<kbd>alt</kbd>+<kbd>del</kbd>
-
-**bold 1** and __bold 2__
-
-*italic 1*  and _italic 2_
-
-~~strike~~
-
-
-***bold 1 and italic 1***
-
-___bold 2 and italic 2___
-
-__*bold 2 and italic 1*__
-
-**_bold 1 and italic 2_**
-
-
-~~*strike italic 1*~~ and *~~strike italic 2~~*
-
-~~_strike italic 2_~~ and  _~~strike italic 2~~_
-
-
-~~**strike bold 1**~~ and **~~strike bold 1~~**
-
-~~__strike bold 2__~~ and __~~strike bold 2~~__
-
-
-~~***strike italic 1 bold 1***~~ and ***~~strike italic 1 bold 1~~***
-
-~~___strike italic 2 bold 2___~~ and ___~~strike italic 2 bold 2~~___
-
-**~~*strike italic 1 bold 1*~~** and *~~**strike italic 1 bold 1**~~*
-
-__~~_strike italic 2 bold 2_~~__ and _~~__strike italic 2 bold 2__~~_
-
-**~~_strike italic 2 bold 1_~~** and _~~**strike italic 2 bold 1**~~_
-
-__~~*strike italic 1 bold 2*~~__ and *~~__strike italic 1 bold 2__~~*
-
-## Links
-
-Footnote, reference sources are provided in separate markdowns files specified in frontmatter.
-```md
-[Reference Link][1]
-
-Footnotes[^1] have a label[^label] and a definition[^!DEF]
-
-Web image
-![Web Picture](https://i.ytimg.com/vi/LatorN4P9aA/0.jpg "Web Picture")
-
-Local image
-![Local Picture](logo-revolunet-carre.jpg "Local Picture")
-
-contact@revolunet.com
-
-@revolunet
-
-Issue #1
-
-https://github.com/revolunet/sublimetext-markdown-preview/
-
-This is a link https://github.com/revolunet/sublimetext-markdown-preview/.
-
-This is a link "https://github.com/revolunet/sublimetext-markdown-preview/".
-
-With this link (https://github.com/revolunet/sublimetext-markdown-preview/), it still works.
-
-    [1]: https://github.com/revolunet/sublimetext-markdown-preview/
-    [^1]: This is a footnote
-    [^label]: A footnote on "label"
-    [^!DEF]: The footnote for definition
-```
-
-[Reference Link][1]
-
-Footnotes[^1] have a label[^label] and a definition[^!DEF]
-
-Web image
-![Web Picture](https://i.ytimg.com/vi/LatorN4P9aA/0.jpg "Web Picture")
-
-www.google.com
-
-contact@revolunet.com
-
-@revolunet
-
-Issue #1
-
-https://github.com/revolunet/sublimetext-markdown-preview/
-
-This is a link https://github.com/revolunet/sublimetext-markdown-preview/.
-
-This is a link "https://github.com/revolunet/sublimetext-markdown-preview/".
-
-With this link (https://github.com/revolunet/sublimetext-markdown-preview/), it still works.
-
-    [1]: https://github.com/revolunet/sublimetext-markdown-preview/
-    [^1]: This is a footnote
-    [^label]: A footnote on "label"
-    [^!DEF]: The footnote for definition
-
-## Abbreviation
-
-Abbreviations source are found in a separate markdown file specified in frontmatter.
-```md
-The HTML specification 
-is maintained by the W3C.
-
-*[HTML]: Hyper Text Markup Language
-*[W3C]:  World Wide Web Consortium
-```
-
-The HTML specification 
-is maintained by the W3C.
-
-## Unordered List
-
-```md
-Unordered List
-
-- item 1
-    * item A
-    * item B
-        more text
-        + item a
-        + item b
-        + item c
-    * item C
-- item 2
-- item 3
-```
-
-Unordered List
-
-- item 1
-    * item A
-    * item B
-        more text
-        + item a
-        + item b
-        + item c
-    * item C
-- item 2
-- item 3
-
-
-## Ordered List
-
-```md
-Ordered List
-
-1. item 1
-    1. item A
-    2. item B
-        more text
-        1. item a
-        2. item b
-        3. item c
-    3. item C
-2. item 2
-3. item 3
-```
-
-Ordered List
-
-1. item 1
-    1. item A
-    2. item B
-        more text
-        1. item a
-        2. item b
-        3. item c
-    3. item C
-2. item 2
-3. item 3
-
-## Task List
-
-```md
-Task List
-
-- [X] item 1
-    * [X] item A
-    * [ ] item B
-        more text
-        + [x] item a
-        + [ ] item b
-        + [x] item c
-    * [X] item C
-- [ ] item 2
-- [ ] item 3
-```
-
-Task List
-
-- [X] item 1
-    * [X] item A
-    * [ ] item B
-        more text
-        + [x] item a
-        + [ ] item b
-        + [x] item c
-    * [X] item C
-- [ ] item 2
-- [ ] item 3
-
-## Mixed Lists
-
-`Really Mixed Lists` should break with `sane_lists` on.
-
-```md
-Mixed Lists
-
-- item 1
-    * [X] item A
-    * [ ] item B
-        more text
-        1. item a
-        2. itemb
-        3. item c
-    * [X] item C
-- item 2
-- item 3
-
-
-Really Mixed Lists
-
-- item 1
-    * [X] item A
-    - item B
-        more text
-        1. item a
-        + itemb
-        + [ ] item c
-    3. item C
-2. item 2
-- [X] item 3
-```
-
-Mixed Lists
-
-- item 1
-    * [X] item A
-    * [ ] item B
-        more text
-        1. item a
-        2. itemb
-        3. item c
-    * [X] item C
-- item 2
-- item 3
-
-
-Really Mixed Lists
-
-- item 1
-    * [X] item A
-    - item B
-        more text
-        1. item a
-        + itemb
-        + [ ] item c
-    3. item C
-2. item 2
-- [X] item 3
-
-
-## Dictionary
-
-```md
-Dictionary
-:   item 1
-
-    item 2
-
-    item 3
-```
-
-Dictionary
-:   item 1
-
-    item 2
-
-    item 3
-
-## Blocks
-
-```md
-    This is a block.
-    
-    This is more of a block.
-
-```
-
-    This is a block.
-    
-    This is more of a block.
-
-
-## Block Quotes
-
-```md
-> This is a block quote
->> How does it look?
-```
-
-> This is a block quote.
->> How does it look?
-> I think it looks good.
-
-## Fenced Block
-
-Assuming guessing is not enabled.
-
-`````md
-```
-// Fenced **without** highlighting
-function doIt() {
-    for (var i = 1; i <= slen ; i^^) {
-        setTimeout("document.z.textdisplay.value = newMake()", i*300);
-        setTimeout("window.status = newMake()", i*300);
-    }
-}
-```
-
-```javascript
-// Fenced **with** highlighting
-function doIt() {
-    for (var i = 1; i <= slen ; i^^) {
-        setTimeout("document.z.textdisplay.value = newMake()", i*300);
-        setTimeout("window.status = newMake()", i*300);
-    }
-}
-```
-`````
-
-```md
-// Fenced **without** highlighting
-function doIt() {
-    for (var i = 1; i <= slen ; i^^) {
-        setTimeout("document.z.textdisplay.value = newMake()", i*300);
-        setTimeout("window.status = newMake()", i*300);
-    }
-}
-```
-
-```javascript
-// Fenced **with** highlighting
-function doIt() {
-    for (var i = 1; i <= slen ; i^^) {
-        setTimeout("document.z.textdisplay.value = newMake()", i*300);
-        setTimeout("window.status = newMake()", i*300);
-    }
-}
-```
-
-## Tables
-
-```md
-| _Colors_      | Fruits          | Vegetable         |
-| ------------- |:---------------:| -----------------:|
-| Red           | *Apple*         | [Pepper](#Tables) |
-| ~~Orange~~    | Oranges         | **Carrot**        |
-| Green         | ~~***Pears***~~ | Spinach           |
-```
-
-| _Colors_      | Fruits          | Vegetable    |
-| ------------- |:---------------:| ------------:|
-| Red           | *Apple*         | Pepper       |
-| ~~Orange~~    | Oranges         | **Carrot**   |
-| Green         | ~~***Pears***~~ | Spinach      |
+[React]: https://react.dev/
+[Next.js]: https://nextjs.org/
+[Chakra UI]: https://www.chakra-ui.com/
+[Storybook]: https://storybook.js.org/
+[MDX]: https://mdxjs.com/
+[ESLint]: https://eslint.org/
+[Prettier]: https://prettier.io/
