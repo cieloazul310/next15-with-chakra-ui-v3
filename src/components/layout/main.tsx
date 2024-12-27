@@ -1,34 +1,37 @@
-import type { PropsWithChildren } from "react";
+import type { PropsWithChildren, ReactNode } from "react";
 import { Box } from "@chakra-ui/react";
-import Header from "./header";
+import { Footer } from "./footer";
 import Menu from "./menu";
-import Drawer from "./drawer";
 
-export default function MainLayout({ children }: PropsWithChildren) {
+export type MainLayoutProps = PropsWithChildren<{
+  sidebarContents?: ReactNode;
+}>;
+
+export function MainLayout({ children, sidebarContents }: MainLayoutProps) {
   return (
-    <>
-      <Header />
-      <Box display="flex" bg="bg.subtle">
-        <Box
-          width="sidebar-width"
-          bg="colorPalette.subtle/10"
-          maxHeight="calc(100vh - token(sizes.header-height))"
-          borderRightWidth="1px"
-          borderRightColor="colorPalette.subtle"
-          display={{ base: "none", md: "block" }}
-          py="lg"
-          position="sticky"
-          top="token(sizes.header-height)"
-          overflowY="auto"
-          flexShrink={0}
-        >
-          <Menu />
-        </Box>
-        <Box flexGrow={1} overflowX="hidden" asChild>
-          <main>{children}</main>
-        </Box>
+    <Box display="flex" bg="bg.subtle">
+      <Box
+        width="sidebar-width"
+        bg="colorPalette.subtle/10"
+        maxHeight="calc(100vh - token(sizes.header-height))"
+        borderRightWidth="1px"
+        borderRightColor="colorPalette.subtle"
+        display={{ base: "none", md: "block" }}
+        py="lg"
+        position="sticky"
+        top="token(sizes.header-height)"
+        overflowY="auto"
+        flexShrink={0}
+      >
+        {sidebarContents}
+        <Menu />
       </Box>
-      <Drawer />
-    </>
+      <Box flexGrow={1} overflowX="hidden" asChild>
+        <main>
+          {children}
+          <Footer />
+        </main>
+      </Box>
+    </Box>
   );
 }

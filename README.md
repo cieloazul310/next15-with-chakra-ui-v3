@@ -37,7 +37,10 @@ Using Chakra UI in Storybook - Chakra UI
 Storybook for Next.js - Storybook  
 <https://storybook.js.org/docs/get-started/frameworks/nextjs>
 
-### Chakra UI
+### Chakra UI v3
+
+Customization - Chakra UI  
+<https://www.chakra-ui.com/docs/theming/customization/overview>
 
 Change the default color palette - Chakra UI  
 <https://www.chakra-ui.com/guides/theming-change-default-color-palette>

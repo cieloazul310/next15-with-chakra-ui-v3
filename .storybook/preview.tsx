@@ -1,5 +1,5 @@
 import { withThemeByClassName } from "@storybook/addon-themes";
-import type { Preview } from "@storybook/react";
+import type { Preview, ReactRenderer } from "@storybook/react";
 import { Provider } from "../src/providers/chakra-provider";
 
 const preview: Preview = {
@@ -12,15 +12,15 @@ const preview: Preview = {
     },
   },
   decorators: [
+    withThemeByClassName<ReactRenderer>({
+      defaultTheme: "light",
+      themes: { light: "", dark: "dark" },
+    }),
     (Story) => (
       <Provider>
         <Story />
       </Provider>
     ),
-    withThemeByClassName({
-      defaultTheme: "light",
-      themes: { light: "", dark: "dark" },
-    }),
   ],
 };
 

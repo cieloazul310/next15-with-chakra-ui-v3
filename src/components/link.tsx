@@ -21,7 +21,7 @@ export function Link({
     );
   }
   return (
-    <ChakraLink asChild {...props}>
+    <ChakraLink wordBreak="break-all" asChild {...props}>
       <a href={href} target="_blank" rel="noreffer noopener">
         {children}
         <RiExternalLinkLine />

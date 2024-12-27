@@ -1,23 +1,19 @@
 import type { PropsWithChildren } from "react";
-import { Box, Container } from "@chakra-ui/react";
-import MainLayout from "@/components/layout/main";
+import { Container } from "@chakra-ui/react";
+import { MainLayout } from "@/components/layout/main";
 
 export default function Layout({ children }: PropsWithChildren) {
   return (
     <MainLayout>
       <article>
-        <Box
-          width="full"
-          height="240px"
-          bgGradient="to-br"
-          gradientFrom="colorPalette.muted/10"
-          gradientVia="bg.muted"
-          gradientTo="colorPalette.muted/10"
-          asChild
+        <Container
+          maxWidth="breakpoint-md"
+          minHeight="calc(100vh - token(sizes.header-height))"
+          py="lg"
+          css={{}}
         >
-          <header />
-        </Box>
-        <Container maxWidth="breakpoint-md">{children}</Container>
+          {children}
+        </Container>
       </article>
     </MainLayout>
   );
