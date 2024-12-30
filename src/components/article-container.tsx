@@ -1,14 +1,12 @@
-import { Container } from "@chakra-ui/react";
-import type { PropsWithChildren } from "react";
+import { Container, type ContainerProps } from "@chakra-ui/react";
 
-export function ArticleContainer({ children }: PropsWithChildren) {
+export function ArticleContainer({
+  maxWidth = "breakpoint-md",
+  minHeight = "calc(100vh - token(sizes.header-height))",
+  py = "lg",
+  ...props
+}: ContainerProps) {
   return (
-    <Container
-      maxWidth="breakpoint-md"
-      minHeight="calc(100vh - token(sizes.header-height))"
-      py="lg"
-    >
-      {children}
-    </Container>
+    <Container maxWidth={maxWidth} minHeight={minHeight} py={py} {...props} />
   );
 }
