@@ -2,7 +2,7 @@ import { useMDXComponents } from "@/mdx-components";
 import { Container } from "@chakra-ui/react";
 import { MDXProvider } from "@mdx-js/react";
 import type { Meta, StoryObj } from "@storybook/react";
-import Page from "@/app/(mdx)/page.mdx";
+import Page from "@/content/feature/mdx.mdx";
 
 const meta: Meta = {
   title: "components/mdx",
